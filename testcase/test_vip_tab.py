@@ -6,14 +6,13 @@ from appium.webdriver.common.touch_action import TouchAction
 import logging
 import allure
 from driver.driver_config import DriverConfig
-from pages.check_pop import CheckPop
+from pages.app import App
 
 
 class TestDemo:
 
     def setup(self):
-        self.driver = DriverConfig().get_vivo_driver()
-        self.check_shucheng_pop = CheckPop().check_shucheng_pop()
+        self.driver = App.start()
 
     @allure.feature('viptab')
     def test_vip_tab(self):
@@ -67,5 +66,5 @@ class TestDemo:
             logging.info("进入书城失败")
 
     def teardown(self):
-        print("teardown successful")
-        self.driver.quit()
+
+        App.quit()

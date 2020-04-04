@@ -2,16 +2,15 @@
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
 from time import sleep
+from selenium.webdriver.android.webdriver import WebDriver
 from data.read_ini import ReadConfig
+
 from driver.driver_config import DriverConfig
 class CheckPop:
-    def __int__(self,driver: webDriver):
-        # self.driver = DriverConfig().get_vivo_driver()
+    def __int__(self,driver: WebDriver):
         self.driver = driver
 
-    def check_shucheng_pop(self):
-        # self.driver = DriverConfig().get_vivo_driver()
-        self.driver
+    def close_shucheng_pop(self):
         self.pop_dict = ReadConfig().get_pop("pop_dict")
         sleep(5)
         for every_pop_key, every_pop_value in eval(self.pop_dict).items():
