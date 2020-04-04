@@ -2,10 +2,11 @@
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
 from driver.driver_config import DriverConfig
+from pages.base_page import BasePage
 
-class LoginTools():
+
+class LoginTools(BasePage):
     def login_vip(self):
-        self.driver = DriverConfig().get_shichang_driver()
         if(self.driver.find_element_by_accessibility_id("mine_button")):
             self.driver.find_element_by_accessibility_id("mine_button").click()
             if(self.driver.find_element_by_id("com.zhangyue.iReader.mine:id/mine_head_title").getText()=="点击登录"):

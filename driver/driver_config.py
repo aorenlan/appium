@@ -3,11 +3,6 @@
 # Then you can paste this into a file and simply run with Python
 from time import sleep
 from appium import webdriver
-from appium.webdriver.common.touch_action import TouchAction
-import pytest
-import logging
-import allure
-from selenium.webdriver.support.wait import WebDriverWait
 
 class DriverConfig:
     def __int__(self):
