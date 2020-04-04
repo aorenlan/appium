@@ -1,0 +1,37 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "asdtest",
+    "children" : [ {
+      "name" : "test_ine",
+      "uid" : "3a8a5ad4b0f76a58",
+      "parentUid" : "e22dfc3b6f6fe2f6f723070fe3b9698a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1585665955140,
+        "stop" : 1585665955140,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e22dfc3b6f6fe2f6f723070fe3b9698a"
+  }, {
+    "name" : "viptab",
+    "children" : [ {
+      "name" : "test_vip_tab",
+      "uid" : "b5079e279d063229",
+      "parentUid" : "9ee67448c39acf4aaea4003c8dee218b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1585665967939,
+        "stop" : 1585665992464,
+        "duration" : 24525
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9ee67448c39acf4aaea4003c8dee218b"
+  } ]
+}

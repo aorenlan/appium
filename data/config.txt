@@ -1,0 +1,12 @@
+[pop_config]
+pop_dict = {'com.zhangyue.commonplugin:id/dialog_renew_close_iv':'common其他弹窗',
+            'com.zhangyue.commonplugin:id/dialog_batch_buy_close':'common购买弹窗'
+            }
+
+[vip]
+ihao = 'i2931763502'
+password = '2cbe64ab6f'
+
+[svip]
+ihao =
+password =

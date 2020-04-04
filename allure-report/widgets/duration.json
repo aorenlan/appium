@@ -1,0 +1,21 @@
+[ {
+  "uid" : "3a8a5ad4b0f76a58",
+  "name" : "test_ine",
+  "time" : {
+    "start" : 1585665955140,
+    "stop" : 1585665955140,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b5079e279d063229",
+  "name" : "test_vip_tab",
+  "time" : {
+    "start" : 1585665967939,
+    "stop" : 1585665992464,
+    "duration" : 24525
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

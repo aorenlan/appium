@@ -1,0 +1,37 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-8SM5MNR",
+    "children" : [ {
+      "name" : "42828-MainThread",
+      "children" : [ {
+        "name" : "test_ine",
+        "uid" : "3a8a5ad4b0f76a58",
+        "parentUid" : "9021d0418976424e1ef03df97bf88de0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1585665955140,
+          "stop" : 1585665955140,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_vip_tab",
+        "uid" : "b5079e279d063229",
+        "parentUid" : "9021d0418976424e1ef03df97bf88de0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1585665967939,
+          "stop" : 1585665992464,
+          "duration" : 24525
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9021d0418976424e1ef03df97bf88de0"
+    } ],
+    "uid" : "d0c23b623b8f7edd26b4f1c0b5008baa"
+  } ]
+}
