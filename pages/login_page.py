@@ -1,6 +1,8 @@
 # This sample code uses the Appium python client
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
+from selenium.webdriver.common.by import By
+
 from driver.driver_config import DriverConfig
 from pages.base_page import BasePage
 
@@ -30,4 +32,6 @@ class LoginTools(BasePage):
             print("用户未登录")
 
     def login_svip(self):
+        login_menu = ""
+        self.driver.find_element(By.ID,login_menu)
         print()

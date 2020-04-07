@@ -10,20 +10,7 @@ class CheckPop:
     def __int__(self,driver: WebDriver):
         self.driver = driver
 
-    def close_shucheng_pop(self):
-        self.pop_dict = ReadConfig().get_pop("pop_dict")
-        sleep(5)
-        for every_pop_key, every_pop_value in eval(self.pop_dict).items():
-            try:
-                print("key" + every_pop_key, "value" + every_pop_value)
-                if (self.driver.find_element_by_id(every_pop_key)):
-                    self.driver.find_element_by_id(every_pop_key).click()
-                    print("成功关闭弹窗" + every_pop_value)
-                    break
-                else:
-                    continue
-            except Exception as e:
-                print(e)
+
 
 
 if __name__ == '__main__':
