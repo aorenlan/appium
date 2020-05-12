@@ -9,11 +9,10 @@ from pages.base_page import BasePage
 
 class MinePage(BasePage):
     def login_vip(self):
-        if(self.driver.find_element_by_accessibility_id("mine_button")):
+        if (self.driver.find_element_by_accessibility_id("mine_button")):
             self.driver.find_element_by_accessibility_id("mine_button").click()
-            if(self.driver.find_element_by_id("com.zhangyue.iReader.mine:id/mine_head_title").getText()=="点击登录"):
+            if (self.driver.find_element_by_id("com.zhangyue.iReader.mine:id/mine_head_title").getText() == "点击登录"):
                 print("用户未登录")
-
 
         #         self.driver.find_element_by_id("com.zhangyue.iReader.mine:id/mine_head_title").click()
         #
@@ -28,10 +27,10 @@ class MinePage(BasePage):
         # el6.send_keys("123")
         # el7 = self.driver.find_element_by_id("com.chaozh.iReaderFree:id/account_block_phonenum_login_submit")
         # el7.click()
-        if(self.driver.find_element_by_android_uiautomator('new UiSelector().text("点击登录)')):
+        if (self.driver.find_element_by_android_uiautomator('new UiSelector().text("点击登录)')):
             print("用户未登录")
 
     def login_svip(self):
         login_menu = ""
-        self.driver.find_element(By.ID,login_menu)
+        self.driver.find_element(By.ID, login_menu)
         print()
