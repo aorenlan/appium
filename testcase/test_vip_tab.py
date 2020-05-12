@@ -7,19 +7,23 @@ import logging
 import allure
 from driver.driver_config import DriverConfig
 from pages.app import App
+from pages.base_page import BasePage
+from pages.shucheng_page import ShuengPage
 
 
 class TestDemo:
 
     def setup(self):
         self.driver = App.start()
+        self.base = BasePage(self.driver)
+        # self.shucheng = ShuengPage(self.driver)
 
     @allure.feature('viptab')
     def test_vip_tab(self):
     #     # 跳过
         print("zxczxc")
-        self.check_begin_pop(self.driver)
-        self.check_shucheng_pop(self.driver)
+        self.base.check_begin_pop()
+        self.base.handld_exception()
         TouchAction(self.driver).tap(x=547, y=1827).perform()
         TouchAction(self.driver).tap(x=125, y=142).perform()
 
@@ -41,29 +45,9 @@ class TestDemo:
 
 
 
-    def check_begin_pop(self,driver):
 
-        try:
-        # 我已阅读并同意
-            if (self.driver.find_element_by_id("android:id/button1")):
-                self.driver.find_element_by_id("android:id/button1").click()
-            sleep(7)
-            # 判断是否有跳过按钮
-            if (self.driver.find_element_by_id("com.chaozh.iReaderFree:id/menu_preference_jump_id")):
-                self.driver.find_element_by_id("com.chaozh.iReaderFree:id/menu_preference_jump_id").click()
-                sleep(7)
-        except Exception:
-            logging.info("打开APP失败")
 
-    def click_shucheng(self):
-        print(
-            "进入书城"
-        )
-        try:
-            if(self.driver.find_element_by_accessibility_id("bookstore_button")):
-                self.driver.find_element_by_accessibility_id("bookstore_button").click()
-        except Exception:
-            logging.info("进入书城失败")
+
 
     def teardown(self):
 

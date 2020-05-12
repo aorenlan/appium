@@ -6,11 +6,14 @@ from selenium.webdriver.android.webdriver import WebDriver
 from data.read_ini import ReadConfig
 
 from driver.driver_config import DriverConfig
-class CheckPop:
-    def __int__(self,driver: WebDriver):
+
+
+class ShuengPage:
+    def __int__(self, driver: WebDriver):
         self.driver = driver
 
-
+    def tab_search(self):
+        pass
 
 
 if __name__ == '__main__':
