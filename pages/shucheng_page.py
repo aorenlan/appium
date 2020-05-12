@@ -22,19 +22,6 @@ class ShuengPage:
         except Exception as e:
             print("点击搜索失败:"+e)
 
-        print(
-            "输入斗罗大陆"
-        )
-        try:
-            if (self.driver.find_element_by_id("com.zhangyue.iReader.search:id/edit_text_view")):
-                self.driver.find_element_by_id("com.zhangyue.iReader.search:id/edit_text_view").send_keys("斗罗大陆")
-        except Exception as e:
-            print("输入失败:" + e)
-
-
-
-        pass
-
     def click_shucheng(self):
         print(
             "进入书城"

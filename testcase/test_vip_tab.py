@@ -8,6 +8,7 @@ import allure
 from driver.driver_config import DriverConfig
 from pages.app import App
 from pages.base_page import BasePage
+from pages.search_page import SearchPage
 from pages.shucheng_page import ShuengPage
 
 
@@ -17,6 +18,7 @@ class TestDemo:
         self.driver = App.start()
         self.base = BasePage(self.driver)
         self.shucheng = ShuengPage(self.driver)
+        self.search = SearchPage(self.driver)
 
     @allure.feature('viptab')
     def test_vip_tab(self):
@@ -28,16 +30,7 @@ class TestDemo:
         self.shucheng.click_shucheng()
         self.base.handld_exception()
         self.shucheng.tab_search()
-        try:
-            TouchAction(self.driver).tap(x=547, y=1827).perform()
-        except Exception as e:
-            print(e)
-
-
-
-
-
-
+        self.search.search_content("绝世武魂")
 
     def teardown(self):
 

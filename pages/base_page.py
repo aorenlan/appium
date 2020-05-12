@@ -11,12 +11,28 @@ class BasePage:
         self.log = Logger('all.log', level='info')
         # log.logger.debug('debug')
 
-    def find_element(self,*args):
-        self.driver.find_element(args)
+    def find_element(self, locator):
+        print(locator)
+        try:
+            return self.driver.find_element(*locator)
+        except:
+            self.handle_exception()
+            # self.find_element(locator)
+            return self.driver.find_element(*locator)
+
+    def find_element_and_click(self, locator):
+        print("click")
+        try:
+            # 如果click也有异常，可以这样处理
+            self.find_element(locator).click()
+        except:
+            self.handle_exception()
+            self.find_element(locator).click()
 
     def handld_exception(self):
         self.pop_dict = ReadConfig().get_pop("pop_dict")
-        sleep(5)
+        sleep(1)
+        self.driver.implicitly_wait(0)
         # pageSource()
         for every_pop_key, every_pop_value in eval(self.pop_dict).items():
             sleep(1)
@@ -29,11 +45,11 @@ class BasePage:
                 elif self.driver.find_element_by_accessibility_id(every_pop_key):
                     print("点击关闭")
                 else:
-
                     continue
             except Exception as e:
                 print("未找到:" + every_pop_value)
                 self.log.logger.debug("未找到"+every_pop_value)
+        self.driver.implicitly_wait(1)
 
     def jump(self):
         print("jump")
