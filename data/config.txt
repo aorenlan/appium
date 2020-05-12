@@ -1,6 +1,8 @@
 [pop_config]
 pop_dict = {'com.zhangyue.commonplugin:id/dialog_renew_close_iv':'common其他弹窗',
             'com.zhangyue.commonplugin:id/dialog_batch_buy_close':'common购买弹窗',
+            'com.chaozh.iReaderFree:id/float_delete':'书城浮窗',
+            '关闭':'关闭视频'
             }
 
 [vip]

@@ -1,13 +1,15 @@
 import logging
 from time import sleep
-
+from report.get_log import Logger
 from selenium.webdriver.android.webdriver import WebDriver
 from data.read_ini import ReadConfig
 
 
 class BasePage:
-    def __init__(self, driver:WebDriver):
+    def __init__(self, driver: WebDriver):
         self.driver = driver
+        self.log = Logger('all.log', level='info')
+        # log.logger.debug('debug')
 
     def find_element(self,*args):
         self.driver.find_element(args)
@@ -17,8 +19,9 @@ class BasePage:
         sleep(5)
         # pageSource()
         for every_pop_key, every_pop_value in eval(self.pop_dict).items():
+            sleep(1)
             try:
-                print("key" + every_pop_key, "value" + every_pop_value)
+                print("key:" + every_pop_key, "value:" + every_pop_value)
                 if self.driver.find_element_by_id(every_pop_key):
                     self.driver.find_element_by_id(every_pop_key).click()
                     print("成功关闭弹窗" + every_pop_value)
@@ -26,9 +29,11 @@ class BasePage:
                 elif self.driver.find_element_by_accessibility_id(every_pop_key):
                     print("点击关闭")
                 else:
+
                     continue
             except Exception as e:
-                print(e)
+                print("未找到:" + every_pop_value)
+                self.log.logger.debug("未找到"+every_pop_value)
 
     def jump(self):
         print("jump")
@@ -51,12 +56,19 @@ class BasePage:
         except Exception:
             logging.info("打开APP失败")
 
-    def click_shucheng(self):
-        print(
-            "进入书城"
-        )
+    def check_jump(self):
+
         try:
-            if(self.driver.find_element_by_accessibility_id("bookstore_button")):
-                self.driver.find_element_by_accessibility_id("bookstore_button").click()
+            for i in range(3):
+
+                if (self.driver.find_element_by_xpath("//android.widget.TextView[contains(@text, '跳过')]")):
+                    self.driver.find_element_by_xpath("//android.widget.TextView[contains(@text, '跳过')]").click()
+                    print("成功关闭开屏幕广告")
+                else:
+                    print("未找到开屏广告")
+                    continue
+                sleep(0.5)
+
         except Exception:
-            logging.info("进入书城失败")
+            logging.info("跳过广告失败")
+
