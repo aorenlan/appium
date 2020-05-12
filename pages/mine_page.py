@@ -7,7 +7,7 @@ from driver.driver_config import DriverConfig
 from pages.base_page import BasePage
 
 
-class LoginTools(BasePage):
+class MinePage(BasePage):
     def login_vip(self):
         if(self.driver.find_element_by_accessibility_id("mine_button")):
             self.driver.find_element_by_accessibility_id("mine_button").click()

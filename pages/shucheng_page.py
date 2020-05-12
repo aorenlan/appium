@@ -2,8 +2,6 @@
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
 from time import sleep
-
-from _pytest import logging
 from selenium.webdriver.android.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -23,6 +21,15 @@ class ShuchengPage(BasePage):
     def __int__(self, driver: WebDriver):
         self.driver = driver
 
+    def tab_search(self):
+        print(
+            "点击搜索"
+        )
+        try:
+            if(self.driver.find_element_by_id("com.zhangyue.iReader.bookStore:id/id_search_bar_input")):
+                self.driver.find_element_by_id("com.zhangyue.iReader.bookStore:id/id_search_bar_input").click()
+        except Exception as e:
+            print("点击搜索失败:"+e)
 
     def check_begin_pop(self):
 
@@ -58,5 +65,4 @@ class ShuchengPage(BasePage):
 
 
 if __name__ == '__main__':
-    # CheckPop().check_shucheng_pop()
     pass

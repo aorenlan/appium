@@ -1,8 +1,8 @@
-from selenium.webdriver.remote.webdriver import WebDriver
-
+# from selenium.webdriver.remote.webdriver import WebDriver
+from appium import webdriver
 
 class App:
-    driver: WebDriver = None
+    driver: webdriver = None
     @classmethod
     def start(cls):
         try:
@@ -15,7 +15,8 @@ class App:
             caps["platformVersion"] = "9.0"
             caps["noReset"] = "true"
             caps["autoGrantPermissions"] = "true"
-            cls.driver = WebDriver.Remote("http://localhost:4723/wd/hub", caps)
+            cls.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
+            cls.driver.implicitly_wait(1)
             print("setup successful")
             return cls.driver
         except Exception as e:
